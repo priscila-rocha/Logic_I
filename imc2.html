@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha()
+	{
+		document.write("<br><br>");
+	}
+	
+	function mostra(mensagem)
+	{
+		document.write("O seu IMC é de: " + mensagem);
+		pulaLinha();
+	}
+	
+	function calculaImc(peso, altura)
+	{
+		var imc = peso / (altura * altura)
+		return imc
+		//outra forma de mostrar o imc, seria apenas colocando "return imc peso / (altura * altura)" pois só tem isso dentro da função
+	}
+	
+	var imcPri = calculaImc(51, 1.45);
+	var imcJhow = calculaImc(61, 1.75);
+	var imcTotal = imcPri + imcJhow;
+	/*outra forma de calcular o total, seria substituir 
+	as variaveis imcPri e imcJhow, chamando a função com 
+	os parametros
+	var imcTotal = calculaImc(51, 1.45) + calculaImc(61, 1.75);
+	*/
+
+	mostra(imcPri)
+	mostra(imcJhow)
+	document.write("A soma dos imc's é " + imcTotal);
+</script>

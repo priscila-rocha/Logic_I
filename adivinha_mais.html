@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<input/> <!campo pra receber entrada do usuario–>
+<button>Compare com meu segredo</button> <!nome do meu botão->
+
+<script>
+    var segredo = Math.round(Math.random()*10);
+    var input = document.querySelector("input"); 
+    input.focus();
+    /*sinaliza que o que foi digitado no input, nome da variavel é input, mas poderia
+    ser qualquer outro nome, o importante é o que está dentro do querySelector
+    está oficialmente no mundo JS*/
+    
+    function verifica(){
+        if (input.value == segredo){
+            //input.valeu recebe o que foi digitado no input 
+            alert("Você acertou!")
+        }else{
+            alert("Você errou!!")
+        }
+
+        input.value = ""; //zerando o valor do campo
+        input.focus(); //focando o ponteiro no campo
+
+    }
+var button = document.querySelector("button");
+/*sinaliza que o clique dado no botão, nome da variavel é button, mas poderia
+    ser qualquer outro nome, o importante é o que está dentro do querySelector
+    está oficialmente no mundo JS*/
+button.onclick = verifica;
+/*chama a função no momento que é clicado no botão, porém pra que isso funcione    
+corretamente, precisa estar com a função sem o ()*/
+
+</script>

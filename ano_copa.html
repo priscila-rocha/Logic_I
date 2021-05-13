@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha()
+	{
+		document.write("<br><br>");
+	}
+	
+	function mostra(mensagem)
+	{
+		document.write(mensagem);
+		pulaLinha();
+	}
+
+var limite = parseInt(prompt("Digite até qual ano você gostaria de saber se tem copa"))
+var anoCopa = 1930;
+
+while(anoCopa <=limite){
+    mostra("Teve Copa do Mundo em: " + anoCopa);
+    anoCopa = anoCopa + 4;   
+
+}
+mostra("Fim")
+</script>

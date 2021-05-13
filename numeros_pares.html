@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha()
+	{
+		document.write("<br><br>");
+	}
+	
+	function mostra(mensagem)
+	{
+		document.write(mensagem);
+		pulaLinha();
+	}
+
+    var numero = 1;
+
+    while(numero <=100){
+        if (numero % 2 == 0){
+
+            mostra("Os números pares são: " + numero);
+        }
+    numero = numero + 1;
+    }
+mostra("Fim")
+</script>

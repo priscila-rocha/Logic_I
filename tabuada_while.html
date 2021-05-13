@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha()
+{
+    document.write("<br><br>");
+}
+
+function mostra(mensagem)
+{
+    document.write(mensagem);
+    pulaLinha();
+}
+
+//fazendo o laço com while
+	var multiplicador = 1;
+	mostra("A tabuada do 7 com o 'while'")
+    while (multiplicador <=10){
+        mostra("7 * " + multiplicador + " = " + 7 * multiplicador);
+        multiplicador++;
+    }
+mostra("Fim")
+
+//fazendo o laço com for
+mostra("Tabuada do 7 com o 'For'")
+for (multiplicador = 1; multiplicador <=10; multiplicador++){
+    mostra("7 * " + multiplicador + " = " + 7 * multiplicador);
+}
+mostra("Fim");
+</script>
