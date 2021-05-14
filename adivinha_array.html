@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+
+<input/> <!--campo pra receber entrada do usuario-->
+<button>Compare com meu segredo</button> <!--nome do meu botão-->
+
+<script>
+    // var segredos = [5, 7, 10, 2];
+
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+    }
+    //gera um numero aleatorio de 0 a 10
+
+    function sorteiaNumeros(quantidade){ 
+        var segredos = [];
+        var repeticao = 1; //iniciando a contagem da quantidade de repetições que deve ser feito o while
+
+        while(repeticao <= quantidade){
+
+            var numeroAleatorio = sorteia(); //numeroAleatorio recebe a função sorteia
+
+            if(numeroAleatorio != 0){
+                var achou = false; //como ainda não foi verificado se o numero já existe na lista, o achou fica como false
+
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+                    if (segredos[posicao] == numeroAleatorio){ //comparando se o numero aleatorio é ou não igual a alguma posição da lista segredos
+                        achou = true; // se encontrou, seta a variavel achou como true
+                        break; //para a executação desse for
+                    }
+                }
+                    if(achou==false){
+                        segredos.push(numeroAleatorio);// se o numero não foi localizado na lista segredos, ele é incluido nela com a função push
+                        repeticao++; 
+                    }
+            }              
+        }
+         return segredos;
+    }
+
+    var segredos = sorteiaNumeros(4);
+    console.log(segredos);
+
+    var input = document.querySelector("input"); 
+    input.focus();
+    /*sinaliza que o que foi digitado no input, nome da variavel é input, mas poderia
+    ser qualquer outro nome, o importante é o que está dentro do querySelector
+    está oficialmente no mundo JS*/
+    
+    function verifica(){
+
+        var achou = false;
+        for(var posicao = 0; posicao < segredos.length; posicao++){
+
+            if (input.value == segredos[posicao]){ //verifica se o numero digitado é igual algum item da lista(posicao)
+                //input.valeu recebe o que foi digitado no input 
+                alert("Você acertou!")
+                achou = true;
+                break;
+            }
+            
+        }
+
+        if(achou==false){
+            alert("Você errou!!")
+        }
+
+        input.value = ""; //zerando o valor do campo
+        input.focus(); //focando o ponteiro no campo
+
+    }
+var button = document.querySelector("button");
+/*sinaliza que o clique dado no botão, nome da variavel é button, mas poderia
+    ser qualquer outro nome, o importante é o que está dentro do querySelector
+    está oficialmente no mundo JS*/
+button.onclick = verifica;
+/*chama a função no momento que é clicado no botão, porém pra que isso funcione    
+corretamente, precisa estar com a função sem o ()*/
+
+</script>
